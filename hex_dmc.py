@@ -42,12 +42,12 @@ if __name__ == "__main__":
     # Convert user hex into RGB values
 	while True:
 		try:
-			user_hex = raw_input('Enter hex color to convert: ')
+			user_hex = input('Enter hex color to convert: ')
 			user_hex = user_hex.replace('#','')
 			user_rgb = hexToRGB(user_hex)
 			break
 		except ValueError:
-			print "Hex colorcode is invalid. Try again..."
+			print("Hex colorcode is invalid. Try again...")
 
-	print rgbToDMC(user_rgb)
+	print(rgbToDMC(user_rgb))
 
