@@ -12,18 +12,18 @@ by_color = defaultdict(int)
 for pixel in img.getdata():
 	by_color[pixel] += 1
 
-color_freq = sorted(by_color.iteritems(), key=itemgetter(1,0), reverse=True)
+color_freq = sorted(by_color.items(), key=itemgetter(1,0), reverse=True)
 
 dmc_freq = defaultdict(int)
-start = time.clock()
+start = time.time()
 for x in range(len(color_freq)):
 	code, desc, close = hex_dmc.rgbToDMC(list(color_freq[x][0]))
 	dmc_freq[code] += 1
-	print close
-end = time.clock()
-print end - start
+	print(close)
+end = time.time()
+print(end - start)
 
-dmc_freq = sorted(dmc_freq.iteritems(), key=itemgetter(1,0), reverse=True)
+dmc_freq = sorted(dmc_freq.items(), key=itemgetter(1,0), reverse=True)
 
 for x in range(10):
-	print dmc_freq[x]
+	print(dmc_freq[x])
